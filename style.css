@@ -1,0 +1,33 @@
+@font-face {
+    font-family: 'establishRoomNo703OTF';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2112@1.0/establishRoomNo703OTF.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body{
+   font-family: 'establishRoomNo703OTF';
+}
+
+.image{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    z-index: -1;
+}
+
+#weatherBox{
+    text-align: center;
+    float: left;
+    width: 50%;
+}
+
+#loginBox{
+    float: right;
+    width: 20%;
+    margin-top: 20px;
+}
