@@ -7,15 +7,16 @@ const success = (position) => {
     const lon = position.coords.longitude;
     const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${APIKEY}`;
     fetch(url).then(res => res.json()).then(data => {
+        
         const weather = document.querySelector("#weatherBox span");
-    
+        weather.innerHTML = '';
         weather.innerHTML = `${data.weather[0].main} / ${parseInt(data.main.temp - 273.15)} / ${data.name}`;    
     });
 }
 
 const err = () => {
     const weather = document.querySelector("#weatherBox span");
-    weather.innerHTML = "Weather";
+    
 }
 
 navigator.geolocation.getCurrentPosition(success,err);

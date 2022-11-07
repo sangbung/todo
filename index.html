@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="kr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,15 +12,17 @@
         <div class="nav flexContainerHeader">
             <nav class="box navbar">
                 <div id="weatherBox">
-                    <span></span>
-
+                    <span>Weather</span>
                 </div>
-                <div id="nickname"></div>
                 <div id="loginBox">    
-                    <form id="loginForm">
-                        <input class="text" type="text" required>
+                    <form id="loginForm" class="hidden">
+                        <input class="text" type="text">
                         <button class="btn">Login</button> 
                     </form>
+                    <div id="nicknameBox" class="hidden">
+                        <h1 id="nickname"></h1>
+                    </div>
+                    <button class="btn snowingbtn hidden" id="snow">snowing</button>
                 </div>
             </nav>
         </div>
@@ -31,42 +33,58 @@
                 <p></p>
                 <p></p>
             </div>
-            <div class="div2" id="video">
-                <canvas id="canvas" width="300" height="300"></canvas>
-            </div>
-            </div>
-        <div class="div1">
-            <h1>rewq</h1>
         </div>
     </section>
-    <script type="importmap">
-        {
-            "imports": {
-                "three": "https://unpkg.com/three@0.141.0/build/three.module.js",
-                "GLTFLoader" : "https://unpkg.com/three@0.141.0/examples/jsm/loaders/GLTFLoader.js"
-            }
-        }
-    </script>
-    <script>
-        import {GLTFLoader} from "GLTFLoader";
-        import * as THREE from 'three';
+    <section class="flexContainerMain">
+        <div class="div1">
+            <form id="todoForm">
+                <input class="todoText" type="text" placeholder="할일을 입력하고 엔터를 누르세요!" required>
+            </form>
+            <ul id="todoList">
 
-        let scene = new THREE.Scene();
-        let renderer = new THREE.WebGLRenderer({
-            canvas : document.querySelector("#canvas")
-        });
-
-        let camera = new THREE.PerspectiveCamera(30,1);
-
-        let loader = new GLTFLoader();
-        loader.load('christmas_ball/scene.gltf',function(gltf){
-            scene.add(gltf.scene);
-            scene.render(scene,camera);
-        });
-
-        
-
-    </script>
+            </ul>
+        </div>
+    </section>
+    <section class="footer">
+        <div id="quote">
+            <p></p>
+        </div>  
+    </section>
+    <div class="snowflakes " aria-hidden="true" id="snowBox">
+        <div class="snowflake">
+        ❅
+        </div>
+        <div class="snowflake">
+        ❅
+        </div>
+        <div class="snowflake">
+        ❆
+        </div>
+        <div class="snowflake">
+        ❄
+        </div>
+        <div class="snowflake">
+        ❅
+        </div>
+        <div class="snowflake">
+        ❆
+        </div>
+        <div class="snowflake">
+        ❄
+        </div>
+        <div class="snowflake">
+        ❅
+        </div>
+        <div class="snowflake">
+        ❆
+        </div>
+        <div class="snowflake">
+        ❄
+        </div>
+    </div>
+    <script src="./js/quote.js"></script>
+    <script src="./js/todo.js"></script>
+    <script src="./js/login.js"></script>
     <script src="./js/clock.js"></script>
     <script src="./js/weather.js"></script>
     <script src="./js/background.js"></script>
