@@ -31,12 +31,42 @@
                 <p></p>
                 <p></p>
             </div>
-            <div class="div2" id="video"></div>
+            <div class="div2" id="video">
+                <canvas id="canvas" width="300" height="300"></canvas>
+            </div>
             </div>
         <div class="div1">
             <h1>rewq</h1>
         </div>
     </section>
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.141.0/build/three.module.js",
+                "GLTFLoader" : "https://unpkg.com/three@0.141.0/examples/jsm/loaders/GLTFLoader.js"
+            }
+        }
+    </script>
+    <script>
+        import {GLTFLoader} from "GLTFLoader";
+        import * as THREE from 'three';
+
+        let scene = new THREE.Scene();
+        let renderer = new THREE.WebGLRenderer({
+            canvas : document.querySelector("#canvas")
+        });
+
+        let camera = new THREE.PerspectiveCamera(30,1);
+
+        let loader = new GLTFLoader();
+        loader.load('christmas_ball/scene.gltf',function(gltf){
+            scene.add(gltf.scene);
+            scene.render(scene,camera);
+        });
+
+        
+
+    </script>
     <script src="./js/clock.js"></script>
     <script src="./js/weather.js"></script>
     <script src="./js/background.js"></script>
