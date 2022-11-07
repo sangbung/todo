@@ -25,8 +25,7 @@ const saveUsername = localStorage.getItem(USERNAME);
 if(saveUsername === null){
     loginForm.classList.remove(HIDDEN);
     loginForm.addEventListener("submit",handleForm);
-}
-else{
+} else {
     painting();
 }
 
